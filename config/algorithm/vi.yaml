@@ -1,0 +1,16 @@
+# Run mode
+# run_mode = 1 -> training
+# run_mode = 0 -> evaluating
+run_mode: 1
+
+is_stochastic_dependence: True
+
+discount_factor: 0.95
+estimation_accuracy: 0.001
+
+# Evaluation
+n_runs: 5
+n_interactions: 5000
+
+# Path for saving data
+path_log: 'data/vi'

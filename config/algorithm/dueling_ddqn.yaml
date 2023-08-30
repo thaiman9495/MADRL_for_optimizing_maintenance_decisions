@@ -1,0 +1,44 @@
+# Run mode
+# run_mode = 1 -> training
+# run_mode = 0 -> evaluating
+run_mode: 0
+
+gpu: 'cuda:1'
+
+is_stochastic_dependence: True
+
+n_steps_training: 800000
+buffer_capacity: 300000
+batch_size: 128
+discount_factor: 0.99
+episode_len_train: 1000
+grad_norm_clip: 1.0
+reward_normalization: 100.0
+
+# Exploration
+epsilon_start: 0.5
+epsilon_end: 0.05
+epsilon_anneal_time: 300000
+
+# Learning rate (lr)
+lr_start: 0.004
+lr_end: 0.00025
+lr_step_size: 50000
+lr_decay_constant: 0.5
+
+# Network
+shared_conf: [256, 256]                  # Hidden layers in shared module
+value_conf: [128]                        # Hidden layers in value module
+advantage_conf: [128]                    # Hidden layers in advantage module
+
+target_update_freq: 20000                # Constant for updating target network
+policy_update_freq: 4                   # Policy update frequency
+log_freq: 1000                           # Check point saving frequency
+
+# Evaluation
+n_runs: 1
+episode_len_eval: 5000
+
+# Path for saving data
+path_log: 'data/dueling_ddqn'
+path_model: 'C:/Users/thaim/Documents/data_holder/papers/paper_2/revision_0_v1/5_component_system/dueling_ddqn'

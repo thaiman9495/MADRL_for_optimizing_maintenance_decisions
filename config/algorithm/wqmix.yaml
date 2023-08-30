@@ -1,0 +1,51 @@
+# Run mode
+# run_mode = 1 -> training
+# run_mode = 0 -> evaluating
+run_mode: 0
+
+gpu: 'cuda:0'
+
+is_stochastic_dependence: True
+
+n_steps_training: 3000000
+buffer_capacity: 3000
+batch_size: 32
+discount_factor: 0.99
+episode_len_train: 300
+grad_norm_clip: 5.0
+reward_normalization: 1000.0
+
+# Exploration
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_anneal_time: 500000
+
+# Learning rate (lr)
+lr_start: 0.00025
+lr_end: 0.00025
+lr_step_size: 100
+lr_decay_constant: 0.5
+
+# Network
+hidden_conf_1: [128, 128]
+hidden_conf_2: [64]
+rnn_conf: 64
+
+n_neurons_mixer: 64                    # Number of neurons in mixing network
+n_neurons_hyper: 128                   # Number of neurons in hyper network
+mixer_true_conf: [128, 128]            # Hidden layers in mixer net for q_true
+
+target_update_freq: 40000              # Constant for updating target network
+policy_update_freq: 200                # Policy update frequency
+log_freq: 1000                         # Check point saving frequency
+
+# Weighting
+weighting_constant: 0.65
+
+# Evaluation
+n_runs: 1
+episode_len_eval: 5000
+
+# Path for saving data
+path_log: 'data/wqmix'
+path_model: 'C:/Users/thaim/Documents/data_holder/papers/paper_2/revision_0_v1/11_component_system/wqmix'

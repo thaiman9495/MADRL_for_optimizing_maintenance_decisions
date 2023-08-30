@@ -1,0 +1,11 @@
+is_stochastic_dependence: True
+
+n_iterations: 20
+population_size: 10
+crossover_prob: 0.8
+mutation_prob: 0.1
+
+n_interventions: 5000
+n_runs: 5
+
+path_log: 'data/ga'
